@@ -1,7 +1,6 @@
 package org.pd.streaming.aggregation.simple;
 
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
-import org.apache.flink.streaming.api.functions.source.SourceFunction.SourceContext;
 
 class IntegerGeneratorSource implements SourceFunction<Integer>
 {
