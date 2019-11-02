@@ -9,6 +9,10 @@ import org.apache.flink.streaming.api.windowing.time.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ * @author preetdeep.kumar
+ */
 public class IntegerSumWithReduce
 {
 	private static final Logger logger = LoggerFactory.getLogger(Integer.class);

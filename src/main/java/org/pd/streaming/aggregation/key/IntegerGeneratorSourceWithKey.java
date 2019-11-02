@@ -1,11 +1,13 @@
-package org.pd.streaming.aggregation.simple;
+package org.pd.streaming.aggregation.key;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
 
 /**
  * Generate integers with an id. Each record which is sent to stream is a Tuple2
- * of id and Integer. Flink 1.9 provides TupleXX classes where 'XX' is any number between 2 to 25. 
+ * of id and Integer. Flink 1.9 provides TupleXX classes where 'XX' is any number between 2 to 25.
+ * 
+ * @author preetdeep.kumar
  */
 class IntegerGeneratorSourceWithKey implements SourceFunction<Tuple2<String, Integer>>
 {

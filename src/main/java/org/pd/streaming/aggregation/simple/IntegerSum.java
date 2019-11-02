@@ -14,6 +14,10 @@ import org.apache.flink.util.Collector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ * @author preetdeep.kumar
+ */
 public class IntegerSum
 {
 	private static final Logger logger = LoggerFactory.getLogger(Integer.class);

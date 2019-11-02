@@ -1,12 +1,15 @@
-package org.pd.streaming.aggregation.simple;
+package org.pd.streaming.aggregation.key;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
+import org.pd.streaming.aggregation.simple.IntegerSum;
 
 /**
- * Optimized version of {@link IntegerSum} using Flink provided API 
+ * Optimized version of {@link IntegerSum} using Flink provided API
+ * 
+ * @author preetdeep.kumar
  */
 public class IntegerSumWithKey
 {

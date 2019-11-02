@@ -1,5 +1,10 @@
-package org.pd.streaming.aggregation.simple;
+package org.pd.streaming.aggregation.key;
 
+/**
+ * 
+ * @author preetdeep.kumar
+ *
+ */
 public class MyData 
 {
 	private String id;
