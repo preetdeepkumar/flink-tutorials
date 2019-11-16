@@ -1,4 +1,4 @@
-package org.pd.streaming.etl.event;
+package org.pd.streaming.event;
 
 import java.util.Random;
 

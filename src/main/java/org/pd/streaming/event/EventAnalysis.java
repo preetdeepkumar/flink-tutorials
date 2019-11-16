@@ -1,4 +1,4 @@
-package org.pd.streaming.etl.event;
+package org.pd.streaming.event;
 
 import org.apache.flink.api.common.functions.ReduceFunction;
 import org.apache.flink.api.java.functions.KeySelector;
