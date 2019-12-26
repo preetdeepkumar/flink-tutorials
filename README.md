@@ -28,9 +28,26 @@ cd flink-tutorials
 mvn clean install -DskipTests
 ```
 
-(For testing Flink with ActiveMQ example, start application as follows and POST any string to http://localhost:8080/logs)
+(For testing Flink with ActiveMQ example, start application as follows, and POST apache server log message in JSON to http://localhost:8080/logs)
 ```
 java -jar flink-tutorials-0.0.1-SNAPSHOT.jar
 ```
-
+Sample log data in JSON
+```
+{
+	"ident": "-",
+	"auth": "-",
+	"message": "127.0.0.1 - - [19/Dec/2019:10:50:21 +0000] \"GET /wp-content HTTP/1.0\" 200 5036 \"http://www.fakelog.com\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/5321 (KHTML, like Gecko) Chrome/15.0.837.0 Safari/5321\"",
+	"response": "200",
+	"timestamp": "19/Dec/2019:10:50:21 +0000",	
+	"httpversion": "1.0",
+	"referrer": "\"http://www.fakelog.com\"",
+	"agent": "\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/5321 (KHTML, like Gecko) Chrome/15.0.837.0 Safari/5321\"",
+	"verb": "GET",
+	"request": "/wp-content",
+	"@version": "1",
+	"bytes": "5036",
+	"clientip": "127.0.0.1"
+}
+```
 
