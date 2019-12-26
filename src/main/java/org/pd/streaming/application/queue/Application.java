@@ -27,6 +27,7 @@ public class Application
 	public Session mySession() throws JMSException
 	{
 	    ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory(LOCAL_ACTIVE_MQ_URL);
+	    factory.setTrustAllPackages( true );
 	    Connection connection = factory.createConnection();
 	    connection.start();
 	    return connection.createSession(false, Session.AUTO_ACKNOWLEDGE);

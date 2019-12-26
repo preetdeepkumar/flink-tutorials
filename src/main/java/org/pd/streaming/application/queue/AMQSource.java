@@ -2,16 +2,17 @@ package org.pd.streaming.application.queue;
 
 import javax.jms.Message;
 import javax.jms.MessageConsumer;
+import javax.jms.ObjectMessage;
 
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
 
 /**
- * Simple Flink Source class to read messages from ActiveMQ
+ * Simple Source class to read messages from ActiveMQ queue, cast to POJO and emit to Flink
  * 
  * @author preetdeep.kumar
  */
-public class AMQSource extends RichSourceFunction<String>
+public class AMQSource extends RichSourceFunction<ApacheLogMessage>
 {
     private static final long serialVersionUID = 2609359039011604917L;
     
@@ -31,12 +32,15 @@ public class AMQSource extends RichSourceFunction<String>
     }
     
     @Override
-    public void run( SourceContext<String> ctx ) throws Exception
+    public void run( SourceContext<ApacheLogMessage> ctx ) throws Exception
     {
         while( running )
         {
-            Message message = consumer.receive();
-            ctx.collect( message.getBody( String.class ) );
+            Message m = consumer.receive();
+            
+            ApacheLogMessage logMessage = (ApacheLogMessage)((ObjectMessage)m).getObject();
+            
+            ctx.collect( logMessage );
         }
     }
 
