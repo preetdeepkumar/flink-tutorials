@@ -11,6 +11,11 @@ This is the code repository for the Streaming ETL examples using Apache Flink. M
 * It contains classes which demo usage of a keyed data stream. Every integer is emitted with a key and passed to Flink using two options: Flink Tuple2 class and a Java POJO.
 * The logic is same (compute sum of all integers), however we tell Flink to find a key at an index (Tuple2) or use a getter (POJO). IntegerSumWithKey class uses Tuple2 and IntegerSumWithKeyFromPojo uses a Java POJO class called MyData
 
+### Package - org.pd.streaming.event
+* It contains classes which demo usage of Flink CEP API for Event processing. A event here is instance of SensorEvent class which
+simulates simple state events from sensors. 
+* EventAnalysisCEP class declares a Pattern to identify if a connected_event is immediately followed by disconnected_event within 5 seconds. This pattern is used to create Flink PatternStream which prints matching event if they reach certain threshold.
+
 ### Package - org.pd.streaming.application.queue
 * It contains classes which demo usage of using ActiveMQ as source. It uses Spring Boot's default in-memory activemq support
 and exposes a REST endpoint POST http://localhost:8080/logs to accept messages.
