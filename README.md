@@ -1,6 +1,11 @@
 # Apache Flink Examples
 This is the code repository for the Streaming ETL examples using Apache Flink. My blog on dzone refers to these examples. This project will be updated with new examples. For official Flink documentation please visit [https://flink.apache.org/](https://flink.apache.org/)
 
+### Package - org.pd.streaming.window.example
+* It contains an example of using TumblingWindow to sum integers. 
+* A simple IntegerGenerator class is used as source to produce a number every second.
+* The example inlcudes TimeWindow with ProcessFunction and CountWindow with ReduceFunction
+
 ### Package - org.pd.streaming.aggregation.simple
 * It contains simple aggregation logic for Integers and recommended as starting point for beginners. A simple source class which emits 10 continiously increasing integers every second as default.
 * This source is then passed to IntegerSum class which creates a StreamingExecutionEnvironment, a data stream and finally executes the environment to start the streaming computation.
