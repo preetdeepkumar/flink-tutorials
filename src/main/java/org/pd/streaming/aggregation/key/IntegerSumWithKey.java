@@ -24,7 +24,7 @@ public class IntegerSumWithKey
         // build the pipeline using tumbling window size of 10 seconds
     	dataStream
     	.keyBy(0)
-    	.timeWindowAll(Time.seconds(10))
+    	.timeWindow(Time.seconds(10))
     	.sum(1)
     	.print();
 
