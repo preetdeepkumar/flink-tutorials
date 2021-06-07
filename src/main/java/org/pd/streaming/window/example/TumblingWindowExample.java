@@ -50,7 +50,7 @@ public class TumblingWindowExample
         })
         .print();
         
-        env.execute();
+        env.executeAsync("exampleTimeWindow");
     }
     
     @SuppressWarnings( "serial" )
@@ -69,6 +69,6 @@ public class TumblingWindowExample
         })                
         .print();
         
-        env.execute();
+        env.executeAsync("exampleCountWindow");
     }
 }
