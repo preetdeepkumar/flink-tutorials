@@ -1,9 +1,11 @@
 package org.pd.streaming.window.example;
 
 import org.apache.flink.api.common.functions.ReduceFunction;
+import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.windowing.ProcessAllWindowFunction;
+import org.apache.flink.streaming.api.windowing.assigners.TumblingProcessingTimeWindows;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
@@ -27,11 +29,37 @@ public class TumblingWindowExample
     {
         new TumblingWindowExample().exampleTimeWindow();
         new TumblingWindowExample().exampleCountWindow();
+        new TumblingWindowExample().exampleTimeProcessingTimeWindow();
     }
-    
+    void exampleTimeProcessingTimeWindow() throws Exception {
+
+        String path = "file:///C://Users//ai.roman//exampleTimeProcessingTimeWindow/sum.txt";
+        intStream
+        .windowAll( TumblingProcessingTimeWindows.of( Time.seconds(5),Time.seconds(1) ) )
+        .process( new ProcessAllWindowFunction<Integer, Integer ,TimeWindow>()
+        {
+                    @Override
+                    public void process( Context arg0, Iterable<Integer> input, Collector<Integer> output ) throws Exception
+                    {
+                        logger.info( "exampleTimeProcessingTimeWindow. Computing sum for {}", input );
+
+                        int sum = 0;
+                        for(int i : input) {
+                            sum += i;
+                        }
+                        output.collect( sum );
+                    }
+        })
+                //.writeAsCsv(path, FileSystem.WriteMode.OVERWRITE).setParallelism(1); // Esto creará un único fichero, siempre que la salida fuera una tupla, pero es un método deprecado!
+      .print();
+        // como puedo guardar los datos a disco? o como puedo mandarlo a otro lado?
+        env.executeAsync("exampleTimeProcessingTimeWindow");
+    }
     @SuppressWarnings( "serial" )
     void exampleTimeWindow() throws Exception
     {
+        String path = "file:///C://Users//ai.roman//exampleTimeWindow/sum.txt";
+
         intStream
         .timeWindowAll( Time.seconds( 5 ) ) // all integers within 5 second time window
         .process( new ProcessAllWindowFunction<Integer, Integer ,TimeWindow>()
@@ -39,7 +67,7 @@ public class TumblingWindowExample
             @Override
             public void process( Context arg0, Iterable<Integer> input, Collector<Integer> output ) throws Exception
             {
-                logger.info( "Computing sum for {}", input );
+                logger.info( "exampleTimeWindow. Computing sum for {}", input );
                 
                 int sum = 0;
                 for(int i : input) {
@@ -48,6 +76,7 @@ public class TumblingWindowExample
                 output.collect( sum );
             }
         })
+                //.writeAsCsv(path, FileSystem.WriteMode.OVERWRITE);
         .print();
         
         env.executeAsync("exampleTimeWindow");
@@ -56,6 +85,8 @@ public class TumblingWindowExample
     @SuppressWarnings( "serial" )
     void exampleCountWindow() throws Exception
     {
+        String path = "file:///C://Users//ai.roman//exampleCountWindow/sum.txt";
+
         intStream
         .countWindowAll( 4 )
         .reduce( new ReduceFunction<Integer>()
@@ -66,7 +97,8 @@ public class TumblingWindowExample
                 logger.info( "Reducing {} and {}", value1, value2 );
                 return value1 + value2;
             }
-        })                
+        })
+        //.writeAsCsv(path, FileSystem.WriteMode.OVERWRITE);
         .print();
         
         env.executeAsync("exampleCountWindow");
