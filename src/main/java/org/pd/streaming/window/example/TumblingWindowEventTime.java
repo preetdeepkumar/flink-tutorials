@@ -84,7 +84,7 @@ public class TumblingWindowEventTime {
         env.executeAsync("handleLateElements");
     }
 
-
+// https://dzone.com/articles/deep-dive-into-apache-flinks-tumblingwindow-part-3
     private void handleBranchingDataFlows() throws Exception {
 
         final OutputTag<Element> outputLateTag = new OutputTag<Element>("side-output-late") {
