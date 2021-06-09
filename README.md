@@ -3,6 +3,10 @@ This is the code repository for the Streaming ETL examples using Apache Flink.
 The blog of first author is located in [dzone](https://dzone.com/users/3382657/preetdeepshrivastava.html).
 My [blog](https://aironman2k.wordpress.com).
 I will add more examples and i will try to offer the fork to the original author.
+
+Some examples are from [Udemy](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/learn/lecture/12037498#overview), 
+adapted to be used in a windows 10 environment.
+
 This project will be updated with new examples. 
 For official Flink documentation please visit [https://flink.apache.org/](https://flink.apache.org/)
 
