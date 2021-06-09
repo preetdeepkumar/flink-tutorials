@@ -29,6 +29,13 @@
   			<artifactId>flink-cep_2.11</artifactId>
   			<version>${flink.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-queryable-state-client-java -->
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-queryable-state-client-java</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
