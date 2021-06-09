@@ -21,8 +21,8 @@ public class TumblingWindowEventTime {
     static final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
     public static void main(String[] arg) throws Exception {
-        //new TumblingWindowEventTime().testTimestampsAndWatermarks();
-        //new TumblingWindowEventTime().handleLateElements();
+        new TumblingWindowEventTime().testTimestampsAndWatermarks();
+        new TumblingWindowEventTime().handleLateElements();
         new TumblingWindowEventTime().handleBranchingDataFlows();
 
     }
