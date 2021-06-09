@@ -14,19 +14,15 @@
     <orderEntry type="library" name="Maven: org.apache.flink:flink-core:1.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-annotations:1.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-metrics-core:1.10.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.flink:flink-shaded-asm-7:7.1-9.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
     <orderEntry type="library" name="Maven: com.esotericsoftware.kryo:kryo:2.24.0" level="project" />
     <orderEntry type="library" name="Maven: com.esotericsoftware.minlog:minlog:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.1" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.18" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-runtime_2.11:1.10.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.flink:flink-java:1.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-hadoop-fs:1.10.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-shaded-jackson:2.10.1-9.0" level="project" />
-    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.24.0-GA" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.11.12" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-actor_2.11:2.5.21" level="project" />
@@ -44,8 +40,6 @@
     <orderEntry type="library" name="Maven: com.twitter:chill_2.11:0.7.6" level="project" />
     <orderEntry type="library" name="Maven: com.twitter:chill-java:0.7.6" level="project" />
     <orderEntry type="library" name="Maven: org.lz4:lz4-java:1.5.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.flink:flink-clients_2.11:1.10.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.flink:flink-optimizer_2.11:1.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-shaded-guava:18.0-9.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-math3:3.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.29" level="project" />
@@ -54,6 +48,14 @@
     <orderEntry type="library" name="Maven: org.apache.flink:flink-cep_2.11:1.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-queryable-state-client-java:1.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-shaded-netty:4.1.39.Final-9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flink:flink-java:1.10.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flink:flink-shaded-asm-7:7.1-9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flink:flink-clients_2.11:1.10.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flink:flink-optimizer_2.11:1.10.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flink:flink-connector-twitter_2.11:1.10.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.2.2.RELEASE" level="project" />
