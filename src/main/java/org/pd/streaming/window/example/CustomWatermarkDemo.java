@@ -1,7 +1,7 @@
 package org.pd.streaming.window.example;
 
 /***
- * Como puedo hacer watermarking con Flink 1.10?¿
+ * Como puedo hacer watermarking con Flink 1.10?¿ This code doesnt work in flink 1.10.x
  */
 public class CustomWatermarkDemo {
     public static <WatermarkStrategy> void main(String[] args) throws Exception {

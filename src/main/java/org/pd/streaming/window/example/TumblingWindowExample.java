@@ -98,7 +98,7 @@ public class TumblingWindowExample
                 return value1 + value2;
             }
         })
-        //.writeAsCsv(path, FileSystem.WriteMode.OVERWRITE);
+        //.writeAsCsv(path, FileSystem.WriteMode.OVERWRITE); --> DEPRECATED!!
         .print();
         
         env.executeAsync("exampleCountWindow");

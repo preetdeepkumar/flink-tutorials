@@ -1,4 +1,4 @@
-package org.pd.streaming.window.example;
+package org.pd.streaming.state;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.ReduceFunction;
