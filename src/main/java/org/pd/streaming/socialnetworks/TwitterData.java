@@ -55,5 +55,7 @@ public class TwitterData
 
                 out.collect(new Tuple2<String, Integer>(tweet, 1));
             }
-        }    }}
+        }
+    }
+}
 
