@@ -20,18 +20,47 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Random;
 
+/***
+ * For every minute, calculate:
+ *
+ * a) Maximum trade price
+ * b) Minimum trade price
+ * c) Maximum trade volume
+ * d) Minimum trade volume
+ * e) % change in Max_Trade_price from previous 1 minute.
+ * f) % change in MAx_Trade_volume from previous 1 minute.
+ *
+ * Ist report looks like this:
+ *
+ * From Timestamp           End Timestamp               Current Wdw   Current Wdw     % change in     Current Wndw    Current Wndw    %change in
+ *                                                      MAx price     Min_price       Max Price       MAx Volume      Min Volume      MAx Vol
+ *
+ * 06/10/2010:08:00:00      06/10/2010:08:00:58:00      107.0         101.5           0.00              354881          330164          0.00
+ * 06/10/2010:08:01:03      06/10/2010:08:00:59:00      103.0         101.0           -3.74             354948          330514          0.02
+ * ...
+ *
+ * 2nd Report (Alert Report)
+ *
+ * -- For every 5 minute window, if the MAx_trade_price is changing (up or down) by more than 5% then record that event.
+ *
+ */
 public class Stock_Analysis
 {
     public static void main(String[] args) throws Exception
     {
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        // attention, i have added the header to this file!
         String path_futures_trades = "file:///C://stocks_data//FUTURES_TRADES.txt";
 
         DataStream<Tuple5<String, String, String, Double, Integer>> data = env.readTextFile(path_futures_trades)
+
                 .map(new MapFunction<String, Tuple5<String, String, String, Double, Integer>>()
                 {
                     public Tuple5<String, String, String, Double, Integer> map(String value)
                     {
+                        // not processing header
+                        if (value.startsWith("#")) return null;
+
                         String[] words = value.split(",");
                         // date,    time,     Name,       trade,                      volume
                         return new Tuple5<String, String, String, Double, Integer>(words[0], words[1], "XYZ", Double.parseDouble(words[2]), Integer.parseInt(words[3]));
