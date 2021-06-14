@@ -68,9 +68,8 @@ public class Stock_Analysis
                 .process(new TrackChange());
         Random random = new Random();
         int nextAleatorial = random.nextInt();
-        String path_Ist_report = "file:///C://stocks_data//Ist report-"+nextAleatorial+".txt";
+        String path_Ist_report = "file:///C://stocks_data//Ist-report-"+nextAleatorial+".txt";
         change.writeAsText(path_Ist_report);
-        System.out.println("A file was created at " + path_Ist_report);
 
         // Alert when price change from one window to another is more than threshold
         DataStream<String> largeDelta = data .keyBy(new KeySelector<Tuple5<String, String, String, Double, Integer>, String>()
@@ -86,7 +85,9 @@ public class Stock_Analysis
         largeDelta.writeAsText(path_Alert_report);
 
         env.executeAsync("Stock Analysis");
-        System.out.println("Done!. A file was created at " + path_Alert_report);
+
+        System.out.println("Done!. A file was created at " + path_Ist_report + " and " + path_Alert_report);
+
     }
 
     public static class TrackChange extends ProcessWindowFunction<Tuple5<String, String, String, Double, Integer>, String, String, TimeWindow>
