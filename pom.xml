@@ -10,6 +10,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<flink.version>1.10.1</flink.version>
+		<flink-table_2.11.version>1.7.2</flink-table_2.11.version>
 	</properties>
 	
 	<parent>
@@ -24,6 +25,12 @@
 			<artifactId>flink-streaming-java_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-streaming-scala_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+
 		<dependency>
   			<groupId>org.apache.flink</groupId>
   			<artifactId>flink-cep_2.11</artifactId>
@@ -62,6 +69,12 @@
 			<artifactId>flink-connector-kafka-0.11_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-table_2.11</artifactId>
+			<version>${flink-table_2.11.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -122,6 +135,17 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<verbose>true</verbose>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 

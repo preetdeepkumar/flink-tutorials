@@ -2,6 +2,11 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="nexus-scib" />
+      <option name="name" value="nexus-scib" />
+      <option name="url" value="https://nexus.alm.europe.cloudcenter.corp/repository/maven-public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
@@ -15,6 +20,41 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central2" />
+      <option name="name" value="central2" />
+      <option name="url" value="http://central" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="hazelcast-enterprise" />
+      <option name="name" value="hazelcast-enterprise" />
+      <option name="url" value="https://repository.hazelcast.com/release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="phoenix" />
+      <option name="name" value="phoenix" />
+      <option name="url" value="http://islinnxp01.scisb.isban.corp:8081/nexus/content/groups/phoenix/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-snapshots" />
+      <option name="name" value="nexus-snapshots" />
+      <option name="url" value="https://nexus.alm.gsnetcloud.corp/repository/maven-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="confluent" />
+      <option name="name" value="confluent" />
+      <option name="url" value="https://packages.confluent.io/maven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-releases" />
+      <option name="name" value="nexus-releases" />
+      <option name="url" value="https://nexus.alm.gsnetcloud.corp/repository/maven-releases/" />
     </remote-repository>
   </component>
 </project>
