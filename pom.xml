@@ -18,7 +18,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.2.RELEASE</version>
 	</parent>
-	
+	<!-- In a real worl problem, every flink dependency will have provided scope. -->
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
@@ -73,6 +73,11 @@
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table_2.11</artifactId>
 			<version>${flink-table_2.11.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-gelly_2.11</artifactId>
+			<version>${flink.version}</version>
 		</dependency>
 
 		<dependency>

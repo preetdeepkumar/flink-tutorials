@@ -10,6 +10,9 @@ import org.apache.flink.table.sources.TableSource;
 
 import java.util.Random;
 
+/***
+ * Se parece mucho a la api de DataFrames y Datasets de Spark.
+ */
 public class TableApiExample {
 
     public static void main(String[] args) throws Exception
