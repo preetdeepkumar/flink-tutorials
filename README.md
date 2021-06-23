@@ -1,13 +1,12 @@
 # Apache Flink Examples
 This is the code repository for the Streaming ETL examples using Apache Flink.
 The blog of first author is located in [dzone](https://dzone.com/users/3382657/preetdeepshrivastava.html).
+Original github [repo](https://github.com/preetdeepkumar/flink-tutorials).
 My [blog](https://aironman2k.wordpress.com).
-I will add more examples and i will try to offer the fork to the original author.
 
 Some examples are from [Udemy](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/learn/lecture/12037498#overview),
 adapted to be used in a windows 10 environment.
 
-This project will be updated with new examples.
 For official Flink documentation please visit [https://flink.apache.org/](https://flink.apache.org/)
 
 Original work of Preetdeep Kumar.
@@ -41,6 +40,34 @@ simulates simple state events from sensors.
 and exposes a REST endpoint POST http://localhost:8080/logs to accept messages.
 * These messages will be send to queue and Flink will consume it as and when it arrives allowing loose coupling.
 
+### Package - org.pd.streaming.broadcast
+* It contains a class which demo use of using broadcast flink capabilities. It uses a class to simulate the origin of data.
+
+### Package - org.pd.streaming.fraud
+* It contains a class which demo show how use flink to detect some bank frauds.
+
+### Package - org.pd.streaming.graph
+* It contains a class which demo show how use flink to work with Gelly graph api.
+* It creates a graph with friends.
+
+### Package - org.pd.streaming.kakfa
+* It contains a class which demo show how use flink to work with Kafka api.
+* Consuming data from Kafka.
+
+### Package - org.pd.streaming.socialnetworks
+* It contains a class which demo show how use flink to work with Twitter API.
+* Quite naive, but shows the power.
+* Use your own keys.
+
+### Package - org.pd.streaming.table
+* It contains a class which demo show how use flink to work with Table API.
+
+### Package - org.pd.streaming.sql
+* It contains a class which demo show how use flink to work with SQL.
+
+### Package - org.pd.streaming.stocks
+* It contains a class which demo show how use flink to work with stocks trading.
+
 ## Building this project from Source
 Prerequisites:
 * Git
@@ -48,7 +75,7 @@ Prerequisites:
 * Java 8+
 
 ```
-https://github.com/preetdeepkumar/flink-tutorials
+https://github.com/alonsoir/flink-tutorials
 cd flink-tutorials
 mvn clean install -DskipTests
 ```
