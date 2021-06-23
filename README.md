@@ -1,13 +1,13 @@
 # Apache Flink Examples
-This is the code repository for the Streaming ETL examples using Apache Flink. 
+This is the code repository for the Streaming ETL examples using Apache Flink.
 The blog of first author is located in [dzone](https://dzone.com/users/3382657/preetdeepshrivastava.html).
 My [blog](https://aironman2k.wordpress.com).
 I will add more examples and i will try to offer the fork to the original author.
 
-Some examples are from [Udemy](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/learn/lecture/12037498#overview), 
+Some examples are from [Udemy](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/learn/lecture/12037498#overview),
 adapted to be used in a windows 10 environment.
 
-This project will be updated with new examples. 
+This project will be updated with new examples.
 For official Flink documentation please visit [https://flink.apache.org/](https://flink.apache.org/)
 
 Original work of Preetdeep Kumar.
@@ -33,7 +33,7 @@ Original work of Preetdeep Kumar.
 
 ### Package - org.pd.streaming.event
 * It contains classes which demo usage of Flink CEP API for Event processing. A event here is instance of SensorEvent class which
-simulates simple state events from sensors. 
+simulates simple state events from sensors.
 * EventAnalysisCEP class declares a Pattern to identify if a connected_event is immediately followed by disconnected_event within 5 seconds. This pattern is used to create Flink PatternStream which prints matching event if they reach certain threshold.
 
 ### Package - org.pd.streaming.application.queue
@@ -48,7 +48,7 @@ Prerequisites:
 * Java 8+
 
 ```
-git clone https://github.com/airoman-indizen/flink-tutorials
+https://github.com/preetdeepkumar/flink-tutorials
 cd flink-tutorials
 mvn clean install -DskipTests
 ```
@@ -64,7 +64,7 @@ Sample log data in JSON
   "auth": "-",
   "message": "127.0.0.1 - - [19/Dec/2019:10:50:21 +0000] \"GET /wp-content HTTP/1.0\" 200 5036 \"http://www.fakelog.com\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/5321 (KHTML, like Gecko) Chrome/15.0.837.0 Safari/5321\"",
   "response": "200",
-  "timestamp": "19/Dec/2019:10:50:21 +0000",	
+  "timestamp": "19/Dec/2019:10:50:21 +0000",
   "httpversion": "1.0",
   "referrer": "\"http://www.fakelog.com\"",
   "agent": "\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/5321 (KHTML, like Gecko) Chrome/15.0.837.0 Safari/5321\"",
@@ -74,4 +74,3 @@ Sample log data in JSON
   "clientip": "127.0.0.1"
 }
 ```
-
