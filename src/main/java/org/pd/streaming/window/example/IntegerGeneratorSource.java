@@ -1,8 +1,10 @@
 package org.pd.streaming.window.example;
 
 import java.time.LocalTime;
+import java.util.Timer;
 
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
+import org.apache.flink.streaming.api.windowing.time.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,8 +25,8 @@ class IntegerGenerator implements SourceFunction<Integer>
         
         while( isRunning )
         {
-            ctx.collect( counter );
-
+            // ctx.collect( counter );
+            ctx.collectWithTimestamp(counter, Time.milliseconds(1000).toMilliseconds());
             logger.info("Produced Integer value {} at {}", counter++, LocalTime.now());
             
             Thread.sleep( 1000 );
